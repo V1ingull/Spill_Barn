@@ -97,7 +97,7 @@ body
     background-color: #46acb9;
     display: flex;
     justify-content:center;
-    background-image: url('img/Roggbif.png'); 
+    background-image: url('../img/Roggbif.png'); 
     background-repeat: no-repeat;
     
 }
