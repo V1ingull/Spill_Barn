@@ -21,39 +21,47 @@
     </header>
     <section>  
        
+        <!--Knapper for lyder-->
         <article>
-            <button onclick="Æ()">  Lyd  </button>
+            <button onclick="spillLyd('hest')">  Lyd  </button>
         </article>
     
         <article>
-            <button onclick="hr()">  Lyd  </button>
+            <button onclick="spillLyd('Ku')">  Lyd  </button>
         </article>
-    
+
         <article>
-            <button onclick="shw()">  Lyd  </button>
+            <button onclick="spillLyd('Gris')">  Lyd  </button>
         </article>
-    
+
+        <article>
+            <button onclick="spillLyd('Katt')">  Lyd  </button>
+        </article>
+
+        <article>
+            <button onclick="spillLyd('Hund')">  Lyd  </button>
+        </article>
+
+
     </section>
     
+    <section>   
+
+        <img src="img/Hest.png">
+        <img src="img/Ku.png">
+        <img src="img/Gris.png">
+        <img src="img/Katt.png">
+        <img src="img/Hund.png">
+
+    </section>
+
     <script>   
     
-        function Æ ()
+        function spillLyd (lyd)
         {
-            const Æ = new Audio('lyder/Æ.mp3')
-            Æ.play()
+            const LydFil = new Audio('lyder/'+lyd+'.mp3')
+            LydFil.play()
         }
-    
-        function hr ()
-        {
-            const hr = new Audio('lyder/hr.mp3')
-            he.play()
-        }
-    
-        function shw ()
-        {
-            const shw = new Audio('lyder/shw.mp3')
-            shw.play()
-        } 
 
        </script>
 </body>
