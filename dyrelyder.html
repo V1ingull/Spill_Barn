@@ -1,104 +1,146 @@
 <!DOCTYPE html>
 <html lang="no">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    
-    <link rel="stylessheet" href="css/Normalize.css"> 
+
+    <link rel="stylessheet" href="css/Normalize.css">
     <link rel="stylesheet" href="css/lyddyr.css">
 </head>
 
 
 <body>
-    
-    <header> 
-        <nav>            
-            <ul> 
-                <li > <a href="Index.html"> Hjem </a> </li>
-                <li class="text-rainbow-animation"> <a href="Andrelyder.html"> REEEEEEEEE </a>  </li>
-               
-            </ul> 
-            </nav>
+
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="Index.html"> Hjem </a> </li>
+                <li class="text-rainbow-animation"> <a href="Andrelyder.html"> REEEEEEEEE </a> </li>
+
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section>  
-        
+        <section>
+
             <!--Knapper for lyder-->
-            <article>
-                <button onclick="spillLyd('Hest')">  Lyd  </button>
-            </article>
-        
-            <article>
-                <button onclick="spillLyd('Ku')">  Lyd  </button>
+            <article class="Hest dyr">
+                <button onclick="spillLyd('Hest')"> Lyd </button>
             </article>
 
-            <article>
-                <button onclick="spillLyd('Gris')">  Lyd  </button>
+            <article class="Ku dyr">
+                <button onclick="spillLyd('Ku')"> Lyd </button>
             </article>
 
-            <article>
-                <button onclick="spillLyd('Katt')">  Lyd  </button>
+            <article class="Gris dyr">
+                <button onclick="spillLyd('Gris')"> Lyd </button>
+            </article class=>
+
+            <article class="Katt dyr">
+                <button onclick="spillLyd('Katt')"> Lyd </button>
             </article>
 
-            <article>
-                <button onclick="spillLyd('Hund')">  Lyd  </button>
+            <article class="Hund dyr">
+                <button onclick="spillLyd('Hund')"> Lyd </button>
             </article>
 
 
         </section>
-        
-        <section>   
-            <article>
-            <img src="img/Hest.png" class="Dyrebilde" onclick="svar('Hest')">
+
+        <section>
+
+            <article class="Gris dyr">
+                <img src="img/Gris.png" class="Dyrebilde" onclick="svar('Gris')">
             </article>
 
-            <article>
-            <img src="img/Ku.png" class="Dyrebilde" onclick="svar('Ku')">
+            <article class="Hest dyr">
+                <img src="img/Hest.png" class="Dyrebilde" onclick="svar('Hest')">
             </article>
 
-            <article>
-            <img src="img/Gris.png" class="Dyrebilde" onclick="svar('Gris')">
+            <article class="Katt dyr">
+                <img src="img/Katt.png" class="Dyrebilde" onclick="svar('Katt')">
             </article>
 
-            <article>
-            <img src="img/Katt.png" class="Dyrebilde" onclick="svar('Katt')">
+            <article class="Hund dyr">
+                <img src="img/Hund.png" class="Dyrebilde" onclick="svar('Hund')">
             </article>
 
-            <article>
-            <img src="img/Hund.png" class="Dyrebilde" onclick="svar('Hund')">
+            <article class="Ku dyr">
+                <img src="img/Ku.png" class="Dyrebilde" onclick="svar('Ku')">
             </article>
+
+
+
+
 
         </section>
     </main>
 
-    <script>   
+    <script>
 
         let trykketlyd = "";
-        function spillLyd (lyd)
-        {
-            const LydFil = new Audio('lyder/'+lyd+'.mp3');
+        let poeng = 0;
+
+        function spillLyd(lyd) {
+            const LydFil = new Audio('lyder/' + lyd + '.mp3');
             LydFil.play();
             trykketlyd = lyd;
         }
 
 
-        function svar (bilde)
-        {
-            if (trykketlyd == bilde)
-            {
-                spillLyd("YES");
+        function svar(bilde) {
+            if (trykketlyd == bilde) {
+                spillLyd("yaaas");
+                poeng++;
+                fjernDyr(bilde);
+                if (poeng == 5) {
+                    harVunnet();
+                    
+                }
+           
             }
-            else
+            else 
             {
-                spillLyd("neg")
+                spillLyd("neg");
             }
         }
-       </script>
+
+        function harVunnet() {
+
+            spillLyd("vt");
+            poeng = 0;
+            visDyr();
+            
+        }
+
+        function fjernDyr(dyr) {
+            var elements = document.querySelectorAll('.' + dyr);
+
+
+            elements.forEach(function (element) {
+
+                element.style.visibility = 'hidden';
+
+            });
+        }
+
+        function visDyr()
+        {
+            var elements = document.querySelectorAll('.dyr');
+
+
+            elements.forEach(function (element) {
+
+                element.style.visibility = 'visible';
+
+            });
+        }
+
+    </script>
 </body>
+
 </html>
-
-
-
