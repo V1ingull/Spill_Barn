@@ -28,7 +28,7 @@
         
             <!--Knapper for lyder-->
             <article>
-                <button onclick="spillLyd('hest')">  Lyd  </button>
+                <button onclick="spillLyd('Hest')">  Lyd  </button>
             </article>
         
             <article>
@@ -87,7 +87,14 @@
 
         function svar (bilde)
         {
-
+            if (trykketlyd == bilde)
+            {
+                spillLyd("YES");
+            }
+            else
+            {
+                spillLyd("neg")
+            }
         }
        </script>
 </body>
