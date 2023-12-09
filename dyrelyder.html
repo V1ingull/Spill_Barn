@@ -9,7 +9,10 @@
     <link rel="stylessheet" href="css/Normalize.css"> 
     <link rel="stylesheet" href="css/lyddyr.css">
 </head>
+
+
 <body>
+    
     <header> 
         <nav>            
             <ul> 
@@ -19,50 +22,73 @@
             </ul> 
             </nav>
     </header>
-    <section>  
-       
-        <!--Knapper for lyder-->
-        <article>
-            <button onclick="spillLyd('hest')">  Lyd  </button>
-        </article>
-    
-        <article>
-            <button onclick="spillLyd('Ku')">  Lyd  </button>
-        </article>
 
-        <article>
-            <button onclick="spillLyd('Gris')">  Lyd  </button>
-        </article>
+    <main>
+        <section>  
+        
+            <!--Knapper for lyder-->
+            <article>
+                <button onclick="spillLyd('hest')">  Lyd  </button>
+            </article>
+        
+            <article>
+                <button onclick="spillLyd('Ku')">  Lyd  </button>
+            </article>
 
-        <article>
-            <button onclick="spillLyd('Katt')">  Lyd  </button>
-        </article>
+            <article>
+                <button onclick="spillLyd('Gris')">  Lyd  </button>
+            </article>
 
-        <article>
-            <button onclick="spillLyd('Hund')">  Lyd  </button>
-        </article>
+            <article>
+                <button onclick="spillLyd('Katt')">  Lyd  </button>
+            </article>
+
+            <article>
+                <button onclick="spillLyd('Hund')">  Lyd  </button>
+            </article>
 
 
-    </section>
-    
-    <section>   
+        </section>
+        
+        <section>   
+            <article>
+            <img src="img/Hest.png" class="Dyrebilde" onclick="svar('Hest')">
+            </article>
 
-        <img src="img/Hest.png" class="Dyrebilde">
-        <img src="img/Ku.png" class="Dyrebilde">
-        <img src="img/Gris.png" class="Dyrebilde">
-        <img src="img/Katt.png" class="Dyrebilde">
-        <img src="img/Hund.png" class="Dyrebilde">
+            <article>
+            <img src="img/Ku.png" class="Dyrebilde" onclick="svar('Ku')">
+            </article>
 
-    </section>
+            <article>
+            <img src="img/Gris.png" class="Dyrebilde" onclick="svar('Gris')">
+            </article>
+
+            <article>
+            <img src="img/Katt.png" class="Dyrebilde" onclick="svar('Katt')">
+            </article>
+
+            <article>
+            <img src="img/Hund.png" class="Dyrebilde" onclick="svar('Hund')">
+            </article>
+
+        </section>
+    </main>
 
     <script>   
-    
+
+        let trykketlyd = "";
         function spillLyd (lyd)
         {
-            const LydFil = new Audio('lyder/'+lyd+'.mp3')
-            LydFil.play()
+            const LydFil = new Audio('lyder/'+lyd+'.mp3');
+            LydFil.play();
+            trykketlyd = lyd;
         }
 
+
+        function svar (bilde)
+        {
+
+        }
        </script>
 </body>
 </html>
