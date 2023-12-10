@@ -84,26 +84,27 @@
     </main>
 
     <script>
+        
+        window.onload = spreDyr; //Når siden lastes starter kaller "spreDyr" uten den får vi ikke spredyr 
 
-        window.onload = spreDyr;
+        let trykketlyd = ""; //Husker hvilken lyd du trykker på
+        let poeng = 0; // Husker poeng
 
-        let trykketlyd = "";
-        let poeng = 0;
-
+        //Spiler av lyd med navn og opptaterer trykketlyd
         function spillLyd(lyd) {
             const LydFil = new Audio('lyder/' + lyd + '.mp3');
             LydFil.play();
             trykketlyd = lyd;
         }
 
-
+        //Skjekker om rett bilde er trykket. Opptaterer poeng spiller bra lyd eller spiller feil lyd
         function svar(bilde) {
             if (trykketlyd == bilde) {
                 spillLyd("yaaas");
                 poeng++;
                 fjernDyr(bilde);
-                if (poeng == 1) {
-                    setTimeout(harVunnet, 2500);
+                if (poeng == 5) {
+                    setTimeout(harVunnet, 2200);
                     
                 }
            
@@ -114,17 +115,27 @@
             }
         }
 
-        function harVunnet() {
+        //Spiller vinner lyd. Viser teksten Har vunnet, etter 3 sek kaller "nyttSpill"
+        function harVunnet() 
+        {
 
             spillLyd("vt");
-            //document.getElementById('vunnetText').style.display = 'block';
-            poeng = 0;
-            visDyr();
-            spreDyr();
-            
+            document.getElementById('vunnetTekst').style.display = 'block';
+            setTimeout(nyttSpill, 3000);
             
         }
 
+        //Skjuller vunnetTekst, setter poeng til 0 og sprer og viser dyrene.
+        function nyttSpill() 
+        {
+            document.getElementById('vunnetTekst').style.display = 'none';
+            poeng = 0;
+            visDyr();
+            spreDyr();
+
+        }
+
+        //Fjerner bilde og knap får et dyr.
         function fjernDyr(dyr) {
             var elements = document.querySelectorAll('.' + dyr);
 
@@ -136,7 +147,7 @@
             });
         }
 
-
+        //Viser alle dyr 
         function visDyr()
         {
             var elements = document.querySelectorAll('.dyr');
@@ -150,25 +161,26 @@
         }
 
 
-
+        //Den plaserer bilder av dyr i tilfeldig rekkefølge.
         function spreDyr()
         {
-            var elements = document.querySelectorAll('.Dyrebilde');
-            var toppen = 170;
-            var opptatt = [];
+            var elements = document.querySelectorAll('.Dyrebilde'); // Den lager et Array av alle dyrebilder.
+            var toppen = 170; //Der bildene starter fra toppen.
+            var opptatt = []; //Husker hvile plasser som er opptatt. 
 
-            elements.forEach(function (element) {
+            //Går gjennom alle dyrebilder 
+            elements.forEach(function (element) 
+            {
 
-                var posisjon = Math.floor(Math.random() * 5);
+                var posisjon = Math.floor(Math.random() * 5);//Velger en tilfeldig posisjon 1-5
 
-                while (opptatt.includes(posisjon))
+                while (opptatt.includes(posisjon)) //Så lenge posisjonen er opptatt. 
                 {
-                    posisjon = Math.floor(Math.random() * 5);
-                }
+                    posisjon = Math.floor(Math.random() * 5);//prøver med ny posisjon.
+                }    
+                opptatt.push(posisjon);//Lagrer opptat posisjon.
 
-                opptatt.push(posisjon);
-
-                element.style.top = toppen + (posisjon * 100) + 'px';
+                element.style.top = toppen + (posisjon * 100) + 'px';//Setter posisjon
 
             });
         }

@@ -76,11 +76,11 @@ header ul
      margin-top: 112px;
      gap:5px;
      grid-template-columns: repeat(2, 1fr);
-     grid-template-rows: repeat(3, 1fr);
+     grid-template-rows: repeat(2, 1fr);
      grid-template-areas: "";
  }
  
- 
+ /*Kode hentet fra Stackoverflow*/
  .text-rainbow-animation 
    {
      font-family:arial black;
@@ -98,7 +98,7 @@ header ul
          background-position: 4500vh;
        }
  }
- 
+ /*______________________________________________________________________________________________________________*/
  
  body 
  {
