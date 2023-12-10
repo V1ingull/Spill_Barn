@@ -82,6 +82,8 @@
 
     <script>
 
+        window.onload = spreDyr;
+
         let trykketlyd = "";
         let poeng = 0;
 
@@ -140,6 +142,19 @@
 
             });
         }
+
+        function spreDyr()
+        {
+            var elements = document.querySelectorAll('.dyr');
+
+
+            elements.forEach(function (element) {
+
+                element.style.top = Math.random() * 800 + 'px';  
+
+            });
+        }
+
 
     </script>
 </body>
