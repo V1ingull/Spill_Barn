@@ -25,19 +25,31 @@
     </header>
 
 
+<main>
 
-<section>
+ 
+        <h2 id ="dyrTekst"></h2>
+    
 
-    <article>
-        <h2>Lion</h2>
+    <section>
+        <article>
+            <img src="img/Donkey.jpg" class = dyreBilder>
+        </article>
+    </section>
 
-        <h2>Elephant-</h2>
+    <section>
+        <section>
+            <img src="img/Elephant-.jpg" class = dyreBilder>
+        </section>
+    </section>
 
-        <h2>Donkey</h2>
-    </article>
+    <section>
+        <article>
+            <img src="img/Lion.jpg" class = dyreBilder>
+        </article>
+    </section>
 
-</section>
-
+</main>    
 
 
 
@@ -50,10 +62,21 @@
 <script>
     window.onload = startSpill;
 
+    const dyreliste = ["Donkey", "Elephant", "Lion"] 
+
     function startSpill()
     {
-        
+        document.getElementById('dyrTekst').innerText = TilfeldigDyr();
 
+
+    }
+
+    function TilfeldigDyr()
+    {
+
+        var posisjon = Math.floor(Math.random() * 3);//Velger en tilfeldig posisjon 1-3
+
+        return dyreliste[posisjon];
 
     }
 
