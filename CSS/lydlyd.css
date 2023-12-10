@@ -56,3 +56,15 @@ body
     background-color: #46acb9;
     display: flex;
 }
+
+main 
+ {
+     width: 600px;
+     height: 400px;
+     display: grid;
+     margin-top: 112px;
+     gap:5px;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(2, 1fr);
+     grid-template-areas: "";
+ }
