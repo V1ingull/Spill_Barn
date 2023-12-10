@@ -1,5 +1,13 @@
 
+h1
+{
+  font-family:arial black;
+  font-size: 10rem;
+  color: rgb(252, 172, 1);
+  visibility: hidden;
+  text-align: center;
 
+}
 
 nav
 {
