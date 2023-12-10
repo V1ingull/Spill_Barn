@@ -28,11 +28,8 @@
 
         <section>
 
-            <h1>   DU HAR VUNNET  </h1>
-
-        </section>
-
-        <section>
+            
+            <h1 id="vunnetTekst">   DU HAR VUNNET  </h1>
 
             <!--Knapper for lyder-->
             <article class="Hest dyr">
@@ -105,8 +102,8 @@
                 spillLyd("yaaas");
                 poeng++;
                 fjernDyr(bilde);
-                if (poeng == 5) {
-                    setTimeout(harVunnet, 1500);
+                if (poeng == 1) {
+                    setTimeout(harVunnet, 2500);
                     
                 }
            
@@ -120,9 +117,10 @@
         function harVunnet() {
 
             spillLyd("vt");
+            //document.getElementById('vunnetText').style.display = 'block';
             poeng = 0;
             visDyr();
-            spreDyr();s
+            spreDyr();
             
             
         }
