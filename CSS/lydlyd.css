@@ -58,21 +58,27 @@ body
 
 main 
  {
-     width: 600px;
-     height: 400px;
+    width: auto;
      display: grid;
+     align-self: center;
      margin-top: 112px;
      gap:5px;
      text-align: center;
-     grid-template-columns: repeat(4, 1fr);
-     grid-template-rows: repeat(4, 1fr);
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: repeat(3, 1fr);
      grid-template-areas: "";
  }
 
  .dyreBilder
  {
-
-    
-    max-height: 250px;
-
+    max-height: 300px;
+    align-items: center;
  }
+
+ #dyrTekst
+ {
+    text-align: center;
+    font-size: 60px;
+ }
+
+ 

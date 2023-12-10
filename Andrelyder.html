@@ -22,30 +22,31 @@
                 <li > <a href="dyrelyder.html"> Dyrespill </a> </li>
             </ul> 
             </nav>
+            <h1 id ="dyrTekst"></h1>
     </header>
 
 
 <main>
 
  
-        <h2 id ="dyrTekst"></h2>
+        
     
 
     <section>
         <article>
-            <img src="img/Donkey.jpg" class = dyreBilder>
+            <img src="img/Donkey.jpg" class = "dyreBilder"  onclick="SkjekkDyr('Donkey')">
         </article>
     </section>
 
     <section>
         <section>
-            <img src="img/Elephant-.jpg" class = dyreBilder>
+            <img src="img/Elephant-.jpg" class = "dyreBilder" onclick="SkjekkDyr('Elephant')">
         </section>
     </section>
 
     <section>
         <article>
-            <img src="img/Lion.jpg" class = dyreBilder>
+            <img src="img/Lion.jpg" class = "dyreBilder" onclick="SkjekkDyr('Lion')">
         </article>
     </section>
 
@@ -60,14 +61,15 @@
 
 
 <script>
-    window.onload = startSpill;
+    window.onload = nyttSpill;
 
-    const dyreliste = ["Donkey", "Elephant", "Lion"] 
+    const dyreliste = ["Donkey", "Elephant", "Lion"];
+    let riktigDyr = "";
 
-    function startSpill()
+    function nyttSpill()
     {
         document.getElementById('dyrTekst').innerText = TilfeldigDyr();
-
+        riktigDyr = document.getElementById('dyrTekst').innerText;
 
     }
 
@@ -79,6 +81,28 @@
         return dyreliste[posisjon];
 
     }
+     
+
+    function SkjekkDyr(dyr)
+    {
+
+        if (dyr == riktigDyr) 
+        { 
+            spillLyd(dyr);
+            nyttSpill();
+        }        
+        else
+        {
+            spillLyd("neg");
+        }
+    }
+
+     //Spiler av lyd med navn og opptaterer trykketlyd
+     function spillLyd(lyd) {
+            const LydFil = new Audio('lyder/' + lyd + '.mp3');
+            LydFil.play();
+            trykketlyd = lyd;
+        }
 
 
 </script>
