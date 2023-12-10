@@ -45,7 +45,8 @@ header ul
  
 .Dyrebilde
   {
-    max-width: 150px;
+    max-height: 90px;
+    position: absolute;
   }
  
  header li a 
@@ -64,7 +65,7 @@ header ul
      width: 600px;
      height: 400px;
      display: grid;
-     margin-top: 7rem;
+     margin-top: 112px;
      gap:5px;
      grid-template-columns: repeat(2, 1fr);
      grid-template-rows: repeat(3, 1fr);

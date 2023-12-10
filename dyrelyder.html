@@ -116,6 +116,7 @@
             spillLyd("vt");
             poeng = 0;
             visDyr();
+            spreDyr();s
             
             
         }
@@ -131,6 +132,7 @@
             });
         }
 
+
         function visDyr()
         {
             var elements = document.querySelectorAll('.dyr');
@@ -143,14 +145,26 @@
             });
         }
 
+
+
         function spreDyr()
         {
-            var elements = document.querySelectorAll('.dyr');
-
+            var elements = document.querySelectorAll('.Dyrebilde');
+            var toppen = 170;
+            var opptatt = [];
 
             elements.forEach(function (element) {
 
-                element.style.top = Math.random() * 800 + 'px';  
+                var posisjon = Math.floor(Math.random() * 5);
+
+                while (opptatt.includes(posisjon))
+                {
+                    posisjon = Math.floor(Math.random() * 5);
+                }
+
+                opptatt.push(posisjon);
+
+                element.style.top = toppen + (posisjon * 100) + 'px';
 
             });
         }
