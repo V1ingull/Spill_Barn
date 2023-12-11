@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li> <a href="Index.html"> Hjem </a> </li>
-                <li class="text-rainbow-animation"> <a href="Andrelyder.html"> REEEEEEEEE </a> </li>
+                <li class="text-rainbow-animation"> <a href="Andrelyder.html"> Animal Game </a> </li>
 
             </ul>
         </nav>
@@ -33,23 +33,23 @@
 
             <!--Knapper for lyder-->
             <article class="Hest dyr">
-                <button onclick="spillLyd('Hest')"> Lyd </button>
+                <button onclick="spillLyd('Hest')" class="button"> Lyd </button>
             </article>
 
             <article class="Ku dyr">
-                <button onclick="spillLyd('Ku')"> Lyd </button>
+                <button onclick="spillLyd('Ku')" class="button"> Lyd </button>
             </article>
 
             <article class="Gris dyr">
-                <button onclick="spillLyd('Gris')"> Lyd </button>
+                <button onclick="spillLyd('Gris')" class="button"> Lyd </button>
             </article class=>
 
             <article class="Katt dyr">
-                <button onclick="spillLyd('Katt')"> Lyd </button>
+                <button onclick="spillLyd('Katt')" class="button"> Lyd </button>
             </article>
 
             <article class="Hund dyr">
-                <button onclick="spillLyd('Hund')"> Lyd </button>
+                <button onclick="spillLyd('Hund')" class="button"> Lyd </button>
             </article>
 
 
@@ -163,15 +163,15 @@
         //Den plaserer bilder av dyr i tilfeldig rekkefølge.
         function spreDyr()
         {
-            var elements = document.querySelectorAll('.Dyrebilde'); // Den lager et Array av alle dyrebilder.
-            var toppen = 170; //Der bildene starter fra toppen.
-            var opptatt = []; //Husker hvile plasser som er opptatt. 
+            let elements = document.querySelectorAll('.Dyrebilde'); // Den lager et Array av alle dyrebilder.
+            let toppen = 170; //Der bildene starter fra toppen.
+            let opptatt = []; //Husker hvile plasser som er opptatt. 
 
             //Går gjennom alle dyrebilder 
             elements.forEach(function (element) 
             {
 
-                var posisjon = Math.floor(Math.random() * 5);//Velger en tilfeldig posisjon 1-5
+                let posisjon = Math.floor(Math.random() * 5);//Velger en tilfeldig posisjon 1-5
 
                 while (opptatt.includes(posisjon)) //Så lenge posisjonen er opptatt. 
                 {
