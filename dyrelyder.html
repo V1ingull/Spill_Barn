@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/lyddyr.css">
 </head>
 
-
 <body>
 
     <header>
@@ -28,8 +27,7 @@
 
         <section>
 
-            
-            <h1 id="vunnetTekst">   DU HAR VUNNET  </h1>
+            <h1 id="vunnetTekst"> DU HAR VUNNET </h1>
 
             <!--Knapper for lyder-->
             <article class="Hest dyr">
@@ -79,12 +77,10 @@
 
         </section>
 
-
-
     </main>
 
     <script>
-        
+
         window.onload = spreDyr; //Når siden lastes starter kaller "spreDyr" uten den får vi ikke spredyr 
 
         let trykketlyd = ""; //Husker hvilken lyd du trykker på
@@ -105,28 +101,25 @@
                 fjernDyr(bilde);
                 if (poeng == 5) {
                     setTimeout(harVunnet, 700);
-                    
+
                 }
             }
-            else 
-            {
+            else {
                 spillLyd("neg");
             }
         }
 
         //Spiller vinner lyd. Viser teksten Har vunnet, etter 3 sek kaller "nyttSpill"
-        function harVunnet() 
-        {
+        function harVunnet() {
 
             spillLyd("vt");
             document.getElementById('vunnetTekst').style.display = 'block';
             setTimeout(nyttSpill, 3000);
-            
+
         }
 
         //Skjuller vunnetTekst, setter poeng til 0 og sprer og viser dyrene.
-        function nyttSpill() 
-        {
+        function nyttSpill() {
             document.getElementById('vunnetTekst').style.display = 'none';
             poeng = 0;
             visDyr();
@@ -147,8 +140,7 @@
         }
 
         //Viser alle dyr 
-        function visDyr()
-        {
+        function visDyr() {
             var elements = document.querySelectorAll('.dyr');
 
 
@@ -159,31 +151,27 @@
             });
         }
 
-
         //Den plaserer bilder av dyr i tilfeldig rekkefølge.
-        function spreDyr()
-        {
+        function spreDyr() {
             let elements = document.querySelectorAll('.Dyrebilde'); // Den lager et Array av alle dyrebilder.
             let toppen = 170; //Der bildene starter fra toppen.
             let opptatt = []; //Husker hvile plasser som er opptatt. 
 
             //Går gjennom alle dyrebilder 
-            elements.forEach(function (element) 
-            {
+            elements.forEach(function (element) {
 
                 let posisjon = Math.floor(Math.random() * 5);//Velger en tilfeldig posisjon 1-5
 
                 while (opptatt.includes(posisjon)) //Så lenge posisjonen er opptatt. 
                 {
                     posisjon = Math.floor(Math.random() * 5);//prøver med ny posisjon.
-                }    
+                }
                 opptatt.push(posisjon);//Lagrer opptat posisjon.
 
                 element.style.top = toppen + (posisjon * 100) + 'px';//Setter posisjon
 
             });
         }
-
 
     </script>
 </body>

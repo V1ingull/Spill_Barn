@@ -1,110 +1,88 @@
 <!doctype html>
 <html lang="no">
 
-<head >      
+<head>
     <meta charset="utf-8">
     <title> Kidz have fun </title>
-    <meta name="description" content="templet">     
-    <meta name="author" content="Halvor den beste"> 
+    <meta name="description" content="templet">
+    <meta name="author" content="Halvor den beste">
 
-    <link rel="stylessheet" href="css/Normalize.css"> 
+    <link rel="stylessheet" href="css/Normalize.css">
     <link rel="stylesheet" href="css/lydlyd.css">
 </head>
 
-
-
 <body>
-    
-    <header> 
-        <nav>            
-            <ul> 
-                <li > <a href="Index.html"> Hjem </a> </li>
-                <li > <a href="dyrelyder.html"> Dyrespill </a> </li>
-            </ul> 
-            </nav>
-            <h1 id ="dyrTekst"></h1>
+
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="Index.html"> Hjem </a> </li>
+                <li> <a href="dyrelyder.html"> Dyrespill </a> </li>
+            </ul>
+        </nav>
+        <h1 id="dyrTekst"></h1>
     </header>
 
+    <main>
 
-<main>
-
- 
-        
-    
-
-    <section>
-        <article>
-            <img src="img/Donkey.jpg" class = "dyreBilder"  onclick="SkjekkDyr('Donkey')">
-        </article>
-    </section>
-
-    <section>
         <section>
-            <img src="img/Elephant-.jpg" class = "dyreBilder" onclick="SkjekkDyr('Elephant')">
+            <article>
+                <img src="img/Donkey.jpg" class="dyreBilder" onclick="SkjekkDyr('Donkey')">
+            </article>
         </section>
-    </section>
 
-    <section>
-        <article>
-            <img src="img/Lion.jpg" class = "dyreBilder" onclick="SkjekkDyr('Lion')">
-        </article>
-    </section>
+        <section>
+            <section>
+                <img src="img/Elephant-.jpg" class="dyreBilder" onclick="SkjekkDyr('Elephant')">
+            </section>
+        </section>
 
-</main>    
+        <section>
+            <article>
+                <img src="img/Lion.jpg" class="dyreBilder" onclick="SkjekkDyr('Lion')">
+            </article>
+        </section>
 
+    </main>
 
+    <script>
+        window.onload = nyttSpill;
 
+        const dyreliste = ["Donkey", "Elephant", "Lion"];
+        let riktigDyr = "";
 
+        function nyttSpill() {
+            document.getElementById('dyrTekst').innerText = TilfeldigDyr();
+            riktigDyr = document.getElementById('dyrTekst').innerText;
 
-
-
-
-
-<script>
-    window.onload = nyttSpill;
-
-    const dyreliste = ["Donkey", "Elephant", "Lion"];
-    let riktigDyr = "";
-
-    function nyttSpill()
-    {
-        document.getElementById('dyrTekst').innerText = TilfeldigDyr();
-        riktigDyr = document.getElementById('dyrTekst').innerText;
-
-    }
-
-    function TilfeldigDyr()
-    {
-
-        var posisjon = Math.floor(Math.random() * 3);//Velger en tilfeldig posisjon 1-3
-
-        return dyreliste[posisjon];
-
-    }
-     
-
-    function SkjekkDyr(dyr)
-    {
-
-        if (dyr == riktigDyr) 
-        { 
-            spillLyd(dyr);
-            nyttSpill();
-        }        
-        else
-        {
-            spillLyd("neg");
         }
-    }
 
-     //Spiler av lyd med navn og opptaterer trykketlyd
-     function spillLyd(lyd) {
+        function TilfeldigDyr() {
+
+            var posisjon = Math.floor(Math.random() * 3);//Velger en tilfeldig posisjon 1-3
+
+            return dyreliste[posisjon];
+
+        }
+
+        function SkjekkDyr(dyr) {
+
+            if (dyr == riktigDyr) {
+                spillLyd(dyr);
+                nyttSpill();
+            }
+            else {
+                spillLyd("neg");
+            }
+        }
+
+        //Spiler av lyd med navn og opptaterer trykketlyd
+        function spillLyd(lyd) {
             const LydFil = new Audio('lyder/' + lyd + '.mp3');
             LydFil.play();
             trykketlyd = lyd;
         }
 
-
-</script>
+    </script>
 
 </body>
