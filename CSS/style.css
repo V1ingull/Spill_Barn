@@ -50,10 +50,7 @@ header li a
 
 article
 {
-    height: 200px;
-    width:30%;
-    float: left;
-    
+    float: left;  
 }
 
 h1
@@ -70,6 +67,7 @@ h2
 {
  font-size: 0,3rem;
  margin: 5rem;
+ color: #ecd713;
 }
 
 section
